@@ -4,23 +4,15 @@
 
 #include "include/integration_methods.h"
 
-TEST(INTEGRATION, canCreateIntegrationMethod) {
-    // Act
-    IntegrationMethod im(3.0, 1.5);
+TEST(INTEGRATION_METHOD, q) {
 
-    // Assert
-    EXPECT_EQ(3.0, im.getUpperLimit());
-    EXPECT_EQ(1.5, im.getLowerLimit());
-}
+    double value = 2.3;
+    std::string function = "3*x + cos(2*x)";
 
-TEST(INTEGRATION, canSetLimits) {
-    // Act
     IntegrationMethod im;
+    im.change_variable_to_value(function, value);
 
-    im.setUpperLimit(2.5);
-    im.setLowerLimit(0.5);
+    std::string expected = "3*2.300000 + cos(2*2.300000)";	
 
-    // Assert
-    EXPECT_EQ(2.5, im.getUpperLimit());
-    EXPECT_EQ(0.5, im.getLowerLimit());
+    EXPECT_EQ(expected, function);
 }
