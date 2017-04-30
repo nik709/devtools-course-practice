@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h> 
 #include "include/function_parser.h"
+#include <math.h>
 
 
 TEST(EXPRESSION, can_create_expression_with_number_token) {
