@@ -2,6 +2,9 @@
 
 #include "include/function_parser.h"
 #include <cctype>
+#include <cstring>
+#include <math.h>
+#include <stdexcept>
 
 int get_priority(const std::string& token) {
     if (token == "+") return 1;
