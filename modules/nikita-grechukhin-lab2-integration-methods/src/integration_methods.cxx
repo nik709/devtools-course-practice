@@ -3,7 +3,8 @@
 #include "include/integration_methods.h"
 #include <string>
 void IntegrationMethod::change_variable_to_value(std::string &input, double value) {
-    for (int i = 0; i < input.size(); i++) {
+    int size = input.size();
+    for (int i = 0; i < size; i++) {
         if (input.at(i) == 'x' || input.at(i) == 'X')
             input.replace(i, 1, std::to_string(value));
     }
