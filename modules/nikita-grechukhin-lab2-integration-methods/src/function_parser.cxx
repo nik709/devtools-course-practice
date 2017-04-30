@@ -2,7 +2,6 @@
 
 #include "include/function_parser.h"
 #include <cctype>
-#include <string>
 
 int get_priority(const std::string& token) {
     if (token == "+") return 1;
@@ -13,6 +12,8 @@ int get_priority(const std::string& token) {
     if (token == "**") return 3;
     return 0; // Возвращаем 0 если токен - это не бинарная операция (например ")")
 }
+
+Expression::Expression(std::string token) : token(token) {}
 
 Expression::Expression(std::string token, Expression a) : token(token) {
     args.push_back(a);

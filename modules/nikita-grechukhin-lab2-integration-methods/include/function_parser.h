@@ -3,9 +3,10 @@
 #ifndef MODULES_NIKITA_GRECHUKHIN_LAB2_INTEGRATION_METHODS_INCLUDE_FUNCTION_PARSER_H_
 #define MODULES_NIKITA_GRECHUKHIN_LAB2_INTEGRATION_METHODS_INCLUDE_FUNCTION_PARSER_H_
 #include <vector>
+#include <string>
 
 struct Expression {
-    Expression(std::string token) : token(token) {} // Конструктор для чисел
+	Expression(std::string token);
     Expression(std::string token, Expression a);
     Expression(std::string token, Expression a, Expression b);
 
